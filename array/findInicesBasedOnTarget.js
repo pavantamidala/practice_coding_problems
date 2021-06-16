@@ -28,5 +28,20 @@ function findInteger2(array,target){
     }
     return null
 }
-console.log(findInteger2(arr,target))
+// console.log(findInteger2(arr,target))
 
+function findInteger3(array,target){
+    let numsMap = {}
+    for(let i=0;i<array.length;i++){
+        // let currentMapVal = numsMap[array[i]]
+        if(numsMap[array[i]] >=0){
+            return [numsMap[array[i]],i]
+        }else{
+            let numberToFind = target - nums[i]
+            numsMap[numberToFind] = i
+        }
+    }
+    return null
+}
+
+console.log(findInteger3(arr,target))
